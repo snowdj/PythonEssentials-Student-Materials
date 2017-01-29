@@ -1,13 +1,5 @@
 This repository contains specifications files for the Foundations of Applied Mathematics labs.
 
-<!-- #### Repository Organization
-
-Labs are either submitted as `.py` files (Python) or `.ipynb` files (Jupyter Notebook.
-
-Some labs are graded with an automated test driver.
-The TA will place feedback from the test drivers in the lab folders. -->
-<!-- Apart from these feedback files, files with an extension other than `.py` or `.ipynb` are not tracked by this online repository. -->
-
 # Setup
 
 This website is a _git repository_, an online storage space for code and other small files.
