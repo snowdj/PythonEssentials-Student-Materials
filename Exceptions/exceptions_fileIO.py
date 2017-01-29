@@ -1,5 +1,5 @@
 # exceptions_fileIO.py
-"""Introductory Labs: Exceptions and File I/O.
+"""Python Essentials: Exceptions and File I/O.
 <Name>
 <Class>
 <Date>

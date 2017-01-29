@@ -1,5 +1,5 @@
 # specs.py
-"""Volume IB: Testing.
+"""Python Essentials: Testing.
 <Name>
 <Class>
 <Date>

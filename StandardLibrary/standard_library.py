@@ -1,5 +1,5 @@
 # standard_library.py
-"""Introductory Labs: The Standard Library
+"""Python Essentials: The Standard Library
 <Name>
 <Class>
 <Date>

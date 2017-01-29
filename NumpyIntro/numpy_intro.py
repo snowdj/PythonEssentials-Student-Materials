@@ -1,5 +1,5 @@
 # numpy_intro.py
-"""Introductory Labs: Intro to NumPy.
+"""Python Essentials: Intro to NumPy.
 <Name>
 <Class>
 <Date>

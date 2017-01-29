@@ -1,5 +1,5 @@
 # oop.py
-"""Introductory Labs: Object Oriented Programming.
+"""Python Essentials: Object Oriented Programming.
 <Name>
 <Class>
 <Date>

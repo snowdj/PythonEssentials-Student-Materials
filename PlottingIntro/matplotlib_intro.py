@@ -1,5 +1,5 @@
 # matplotlib_intro.py
-"""Introductory Labs: Intro to Matplotlib.
+"""Python Essentials: Intro to Matplotlib.
 <Name>
 <Class>
 <Date>

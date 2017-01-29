@@ -1,5 +1,5 @@
 # test_specs.py
-"""Volume 1B: Testing.
+"""Python Essentials: Testing.
 <Name>
 <Class>
 <Date>
