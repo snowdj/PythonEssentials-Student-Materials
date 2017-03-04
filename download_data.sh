@@ -30,12 +30,12 @@ git pull origin master
 
 # Copy the files over from the temporary folder.
 cd $START
-mv $PYTHONESSENTIALS/grid.npy NumpyIntro/grid.npy
-mv $PYTHONESSENTIALS/FARS.npy MatplotlibIntro/FARS.npy
-mv $PYTHONESSENTIALS/MLB.npy DataVisualization/MLB.npy
-mv $PYTHONESSENTIALS/anscombe.npy DataVisualization/anscombe.npy
-mv $PYTHONESSENTIALS/countries.npy DataVisualization/countries.npy
-mv $PYTHONESSENTIALS/earthquakes.npy DataVisualization/earthquakes.npy
+mv $PYTHONESSENTIALS/grid.npy NumpyIntro/
+mv $PYTHONESSENTIALS/FARS.npy MatplotlibIntro/
+mv $PYTHONESSENTIALS/MLB.npy DataVisualization/
+mv $PYTHONESSENTIALS/anscombe.npy DataVisualization/
+mv $PYTHONESSENTIALS/countries.npy DataVisualization/
+mv $PYTHONESSENTIALS/earthquakes.npy DataVisualization/
 
 # Delete the temporary folder and return to the original folder.
 cd ../
