@@ -44,6 +44,9 @@ def LU_opt(A):
     """Return the LU decomposition of a square matrix."""
     raise NotImplementedError("Problem 2 Incomplete")
 
+def compare_LU(A):
+    """Prints a comparison of LU and LU_opt with input of a square matrix A."""
+    raise NotImplementedError("Problem 2 Incomplete")
 
 # Problem 3
 def mysum(x):
@@ -54,6 +57,15 @@ def mysum(x):
     """
     raise NotImplementedError("Problem 3 Incomplete")
 
+def compare_sum(X):
+    """
+    Inputs:
+        x (iterable): a list, set, 1-d NumPy array, or another iterable.
+
+    Prints a comparison of mysum and sum
+    Prints a comparison of mysum and np.sum
+    """
+    raise NotImplementedError("Problem 3 Incomplete")
 
 # Problem 4
 def fibonacci(n):
@@ -72,6 +84,14 @@ def foo(n):
         if my_list[j] % 2 == 0:
             evens += my_list[j]
     return my_list, evens
+
+def foo_opt(n):
+    """An optimized version of 'foo'"""
+    raise NotImplementedError("Problem 5 Incomplete")
+
+def compare_foo(n):
+    """Prints a comparison of foo and foo_opt"""
+    raise NotImplementedError("Problem 5 Incomplete")
 
 
 # Problem 6
@@ -96,6 +116,36 @@ def pymatpow(X, power):
     return prod
 
 def numba_matpow(X, power):
+    """ Return X^{power}.
+
+    Inputs:
+        X (ndarray):  A square 2-D NumPy array
+        power (int):  The power to which to raise X.
+    Returns:
+        prod (ndarray):  X^{power}
+    """
+    raise NotImplementedError("Problem 6 Incomplete")
+
+def numpy_matpow(X, power):
+    """ Return X^{power}.
+
+    Inputs:
+        X (ndarray):  A square 2-D NumPy array
+        power (int):  The power to which to raise X.
+    Returns:
+        prod (ndarray):  X^{power}
+    """
+    raise NotImplementedError("Problem 6 Incomplete")
+
+def compare_matpow(X, power):
+    """
+    Inputs:
+        X (ndarray):  A square 2-D NumPy array
+        power (int):  The power to which to raise X.
+
+    Prints a comparison of pymatpow and numba_matpow
+    Prints a comparison of pymatpow and numpy_matpow
+    """
     raise NotImplementedError("Problem 6 Incomplete")
 
 
@@ -139,7 +189,7 @@ def pytridiag(a, b, c, d):
         d ((n,) ndarray): the right side of the linear system.
 
     Returns:
-        x ((n,) array): solution to the tridiagonal system Ax = d.
+        x ((n,) ndarray): solution to the tridiagonal system Ax = d.
     """
     n = len(b)
 
@@ -164,4 +214,20 @@ def pytridiag(a, b, c, d):
     return x
 
 def numba_tridiag(a, b, c, d):
+    """Solve the tridiagonal system Ax = d where A has diagonals a, b, and c.
+
+    Inputs:
+        a ((n-1,) ndarray): first subdiagonal of A.
+        b ((n,) ndarray): main diagonal of A.
+        c ((n-1,) ndarray): first superdiagonal of A.
+        d ((n,) ndarray): the right side of the linear system.
+
+    Returns:
+        x ((n,) ndarray): solution to the tridiagonal system Ax = d.
+    """
+    raise NotImplementedError("Problem 7 Incomplete")
+
+def compare_tridiag():
+    """Prints a comparison of numba_tridiag and pytridiag
+       prints a comparison of numba_tridiag and scipy.linalg.solve."""
     raise NotImplementedError("Problem 7 Incomplete")

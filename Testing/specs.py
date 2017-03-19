@@ -4,83 +4,136 @@
 <Class>
 <Date>
 """
-import math
 
-# Problem 1 Write unit tests for addition().
-# Be sure to install pytest-cov in order to see your code coverage change.
-def addition(a,b):
+def add(a, b):
+    """Add two numbers."""
     return a + b
 
+def divide(a, b):
+    """Divide two numbers, raising an error if the second number is zero."""
+    if b == 0:
+        raise ZeroDivisionError("second input cannot be zero")
+    return a / float(b)
+
+
+# Problem 1
 def smallest_factor(n):
-    """Finds the smallest prime factor of a number.
-    Assume n is a positive integer.
-    """
-    if n == 1:
-        return 1
-    for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0:
-            return i
+    """Return the smallest prime factor of the positive integer n."""
+    if n == 1: return 1
+    for i in range(2, int(n**.5)):
+        if n % i == 0: return i
     return n
 
 
-# Problem 2 Write unit tests for operator().
-def operator(a, b, oper):
-    if type(oper) != str:
-        raise ValueError("Oper should be a string")
-    if len(oper) != 1:
-        raise ValueError("Oper should be one character")
-    if oper == "+":
-        return a+b
-    if oper == "/":
-        if b == 0:
-            raise ValueError("You can't divide by zero!")
-        return a/float(b)
-    if oper == "-":
-        return a-b
-    if oper == "*":
-        return a*b
+# Problem 2
+def month_length(month, leap_year=False):
+    """Return the number of days in the given month."""
+    if month in {"September", "April", "June", "November"}:
+        return 30
+    elif month in {"January", "March", "May", "July",
+                        "August", "October", "December"}:
+        return 31
+    if month == "February":
+        if not leap_year:
+            return 28
+        else:
+            return 29
     else:
-        raise ValueError("Oper can only be: '+', '/', '-', or '*'")
+        return None
 
-# Problem 3 Write unit test for this class.
-class ComplexNumber(object):
-    def __init__(self, real=0, imag=0):
-        self.real = real
-        self.imag = imag
 
-    def conjugate(self):
-        return ComplexNumber(self.real, -self.imag)
+# Problem 3
+def operate(a, b, oper):
+    """Apply an arithmetic operation to a and b."""
+    if type(oper) is not str:
+        raise TypeError("oper must be a string")
+    elif oper == '+':
+        return a + b
+    elif oper == '-':
+        return a - b
+    elif oper == '*':
+        return a * b
+    elif oper == '/':
+        if b == 0:
+            raise ZeroDivisionError("division by zero is undefined")
+        return a / float(b)
+    raise ValueError("oper must be one of '+', '/', '-', or '*'")
 
-    def norm(self):
-        return math.sqrt(self.real**2 + self.imag**2)
 
-    def __add__(self, other):
-        real = self.real + other.real
-        imag = self.imag + other.imag
-        return ComplexNumber(real, imag)
+# Problem 4
+class Fraction(object):
+    """Reduced fraction class with integer numerator and denominator."""
+    def __init__(self, numerator, denominator):
+        if denominator == 0:
+            raise ZeroDivisionError("denominator cannot be zero")
+        elif type(numerator) is not int or type(denominator) is not int:
+            raise TypeError("numerator and denominator must be integers")
 
-    def __sub__(self, other):
-        real = self.real - other.real
-        imag = self.imag - other.imag
-        return ComplexNumber(real, imag)
-
-    def __mul__(self, other):
-        real = self.real*other.real - self.imag*other.imag
-        imag = self.imag*other.real + other.imag*self.real
-        return ComplexNumber(real, imag)
-
-    def __div__(self, other):
-        if other.real == 0 and other.imag == 0:
-            raise ValueError("Cannot divide by zero")
-        bottom = (other.conjugate()*other*1.).real
-        top = self*other.conjugate()
-        return ComplexNumber(top.real / bottom, top.imag / bottom)
-
-    def __eq__(self, other):
-        return self.imag == other.imag and self.real == other.real
+        def gcd(a,b):
+            while b != 0:
+                a, b = b, a % b
+            return a
+        common_factor = gcd(numerator, denominator)
+        self.numer = numerator // common_factor
+        self.denom = denominator // common_factor
 
     def __str__(self):
-        return "{}{}{}i".format(self.real, '+' if self.imag >= 0 else '-',
-                                                                abs(self.imag))
+        if self.denom != 1:
+            return "{} / {}".format(self.numer, self.denom)
+        else:
+            return str(self.numer)
 
-# Problem 5: Write code for the Set game here
+    def __float__(self):
+        return self.numer / float(self.denom)
+
+    def __eq__(self, other):
+        if type(other) is Fraction:
+            return self.numer==other.numer and self.denom==other.denom
+        else:
+            return float(self) == other
+
+    def __add__(self, other):
+        return Fraction(self.numer*other.numer + self.denom*other.denom,
+                                                        self.denom*other.denom)
+    def __sub__(self, other):
+        return Fraction(self.numer*other.numer - self.denom*other.denom,
+                                                        self.denom*other.denom)
+    def __mul__(self, other):
+        return Fraction(self.numer*other.numer, self.denom*other.denom)
+
+    def __div__(self, other):
+        if self.denom*other.numer == 0:
+            raise ZeroDivisionError("cannot divide by zero")
+        return Fraction(self.numer*other.denom, self.denom*other.numer)
+
+
+# Problem 6
+def count_sets(cards):
+    """Return the number of sets in the provided Set hand.
+
+    Parameters:
+        cards (list(str)) a list of twelve cards as 4-bit integers in
+        base 3 as strings, such as ["1022", "1122", ..., "1020"].
+    Returns:
+        (int) The number of sets in the hand.
+    Raises:
+        ValueError: if the list does not contain a valid Set hand, meaning
+            - there are not exactly 12 cards,
+            - the cards are not all unique,
+            - one or more cards does not have exactly 4 digits, or
+            - one or more cards has a character other than 0, 1, or 2.
+    """
+    raise NotImplementedError("Problem 6 Incomplete")
+
+def is_set(a, b, c):
+    """Determine if the cards a, b, and c constitute a set.
+
+    Parameters:
+        a, b, c (str): string representations of 4-bit integers in base 3.
+            For example, "1022", "1122", and "1020" (which is not a set).
+    Returns:
+        True if a, b, and c form a set, meaning the ith digit of a, b,
+            and c are either the same or all different for i=1,2,3,4.
+        False if a, b, and c do not form a set.
+    """
+    raise NotImplementedError("Problem 6 Incomplete")

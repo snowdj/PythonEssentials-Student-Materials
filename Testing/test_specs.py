@@ -8,37 +8,63 @@
 import specs
 import pytest
 
-# Problem 1: Test the addition and smallest factor functions from specs.py
-def test_addition():
-    pass
 
-def test_smallest_factor():
-    pass
+def test_add():
+    assert specs.add(1, 3) == 4, "failed on positive integers"
+    assert specs.add(-5, -7) == -12, "failed on negative integers"
+    assert specs.add(-6, 14) == 8
 
-# Problem 2: Test the operator function from specs.py
-def test_operator():
-    pass
+def test_divide():
+    assert specs.divide(4,2) == 2, "integer division"
+    assert specs.divide(5,4) == 1.25, "float division"
+    with pytest.raises(ZeroDivisionError) as excinfo:
+        specs.divide(4, 0)
+    assert excinfo.value.args[0] == "second input cannot be zero"
 
-# Problem 3: Finish testing the complex number class
+
+# Problem 1: write a unit test for specs.smallest_factor(), then correct it.
+
+
+# Problem 2: write a unit test for specs.month_length().
+
+
+# Problem 3: write a unit test for specs.operate(), then correct it.
+
+
+# Problem 4: write unit tests for specs.Fraction.
 @pytest.fixture
-def set_up_complex_nums():
-    number_1 = specs.ComplexNumber(1, 2)
-    number_2 = specs.ComplexNumber(5, 5)
-    number_3 = specs.ComplexNumber(2, 9)
-    return number_1, number_2, number_3
+def set_up_fractions():
+    frac_1_3 = specs.Fraction(1, 3)
+    frac_1_2 = specs.Fraction(1, 2)
+    frac_n2_3 = specs.Fraction(-2, 3)
+    return frac_1_3, frac_1_2, frac_n2_3
 
-def test_complex_addition(set_up_complex_nums):
-    number_1, number_2, number_3 = set_up_complex_nums
-    assert number_1 + number_2 == specs.ComplexNumber(6, 7)
-    assert number_1 + number_3 == specs.ComplexNumber(3, 11)
-    assert number_2 + number_3 == specs.ComplexNumber(7, 14)
-    assert number_3 + number_3 == specs.ComplexNumber(4, 18)
+def test_fraction_init(set_up_fractions):
+    frac_1_3, frac_1_2, frac_n2_3 = set_up_fractions
+    assert frac_1_3.numer == 1
+    assert frac_1_2.denom == 2
+    assert frac_n2_3.numer == -2
+    frac = specs.Fraction(30, 42)
+    assert frac.numer == 5
+    assert frac.denom == 7
 
-def test_complex_multiplication(set_up_complex_nums):
-    number_1, number_2, number_3 = set_up_complex_nums
-    assert number_1 * number_2 == specs.ComplexNumber(-5, 15)
-    assert number_1 * number_3 == specs.ComplexNumber(-16, 13)
-    assert number_2 * number_3 == specs.ComplexNumber(-35, 55)
-    assert number_3 * number_3 == specs.ComplexNumber(-77, 36)
+def test_fraction_str(set_up_fractions):
+    frac_1_3, frac_1_2, frac_n2_3 = set_up_fractions
+    assert str(frac_1_3) == "1 / 3"
+    assert str(frac_1_2) == "1 / 2"
+    assert str(frac_n2_3) == "-2 / 3"
 
-# Problem 4: Write test cases for the Set game.
+def test_fraction_float(set_up_fractions):
+    frac_1_3, frac_1_2, frac_n2_3 = set_up_fractions
+    assert float(frac_1_3) == 1 / 3.
+    assert float(frac_1_2) == .5
+    assert float(frac_n2_3) == -2 / 3.
+
+def test_fraction_eq(set_up_fractions):
+    frac_1_3, frac_1_2, frac_n2_3 = set_up_fractions
+    assert frac_1_2 == specs.Fraction(1, 2)
+    assert frac_1_3 == specs.Fraction(2, 6)
+    assert frac_n2_3 == specs.Fraction(8, -12)
+
+
+# Problem 5: Write test cases for Set.
