@@ -94,6 +94,9 @@ develop-eggs
 # Unit test / coverage reports
 .coverage
 .tox
+.cache/
+__pycache__/
+htmlcov/
 
 # Miscellaneous
 build/
