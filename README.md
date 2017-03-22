@@ -2,53 +2,66 @@ This repository contains specifications files for the Foundations of Applied Mat
 
 # Setup
 
-This website is a _git repository_, an online storage space for code and other small files.
-_Git_ is the underlying software that manages updates between this online repository and the copies (or _clones_) of the repository stored locally on computers.
-If git is not already installed on your computer, [downloaded it here](http://git-scm.com/downloads).
+This website is a _git repository_, an online storage place for code and other small files.
+_Git_ is the underlying software that manages updates between this online repository and the copies of the repository stored locally on computers (_clones_).
+If git is not already installed on your computer, downloaded it at http://git-scm.com/downloads.
+If you have never used git, you might want to read a few of the following resources.
+- https://git-scm.com/docs/gittutorial
+- https://www.atlassian.com/git/tutorials
+- https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
+- https://docs.gitlab.com/ce/gitlab-basics/start-using-git.html
+- https://www.codecademy.com/learn/learn-git
 
 Many different companies have websites for hosting online git repositories.
-We suggest using either [GitHub](https://github.com) or [Bitbucket](https://bitbucket.org), and provide installation instructions for both services below.
-If you have never used git, consider reading [this GitHub page](https://help.github.com/articles/set-up-git/) or [these Bitbucket tutorials](https://www.atlassian.com/git/tutorials).
+Your instructor will indicate which web service to use, but we only include instructions here for setup with Bitbucket.
 
-### Setup with GitHub
+- _Sign up_. Create a Bitbucket account at https://bitbucket.org.
+If you use an academic email address (ending in .edu, ac.il, edu.sg, etc.), you will get free unlimited public and private repositories.
 
-1. [Sign up for GitHub](https://github.com).
-If you are a student, you may consider checking out [GitHub's education pack](https://education.github.com/) for free private repositories.
-
-2. On GitHub, click the plus sign in the top right hand corner of the page and select **Import repository**.
-Enter the url to this page (https://github.com/Foundations-of-Applied-Mathematics/PythonEssentials-Student-Materials or similar) and supply a name your new repository, then click the green **Begin import** button.
-
-### Setup with Bitbucket
-
-1. [Sign up for Bitbucket](https://bitbucket.org).
-Click **not now** if it asks you to set up your first repository.
-
-2. On Bitbucket, click the **Repositories** button from the menu at the top and select **Import repository**.
-Enter the url to this page (https://github.com/Foundations-of-Applied-Mathematics/PythonEssentials-Student-Materials or similar) and supply a name your new repository.
+- _Make a new repository_.
+On the Bitbucket page, click the **Repositories** button from the menu at the top and select **Create repository**.
+Provide a name for the repository, mark the repository as **private**, and make sure the repository type is **Git**.
 Under **Advanced settings**, enter a short description for your repository, select **No forks** under forking, and select **Python** under language.
-Then click the blue **Import repository** button.
+Finally, click the blue **Create repository** button.
 
-### Cloning and Configuration
-
-After setting up your online repository, open up a shell application on your computer (_Terminal_ on Linux or Mac, or _GitBash_ on Windows).
-Use `cd <directory>` to navigate to the place where you want to store the files from this repository, then use `git clone` to make a local copy of the repository.
-For example, if you're using Bitbucket, your user name is `username`, and your repository is named `volume1`, run the following commands in the shell:
+- _Connect your folder to the new repository_.
+In a shell application (Terminal on Linux or Mac, or Git Bash on Windows), enter the following commands (here `username` is your Bitbucket username and `repo` is the name of your new repository).
 
 ```bash
-$ cd ~/Desktop
-$ git clone https://username@bitbucket.org/username/volume1.git
-Cloning into 'volume1'...
-remote: Counting objects: 67, done.
-remote: Total 67 (delta 0), reused 0 (delta 0), pack-reused 67
-Unpacking objects: 100% (67/67), done.
+# Navigate to your folder.
+cd ~/Desktop/foldername
+
+# Connect this folder with the online repository.
+$ git init
+$ git add origin https://username@bitbucket.org/username/repo.git
+
+# Add your credentials to the folder.
+$ git config --local user.name "your name"
+$ git config --local user.email "your email"
+
+# Add the contents of this folder to git and update the repository.
+$ git add --all
+$ git commit -m "initial commit"
+$ git push origin master
 ```
 
-Finally, navigate to your new folder and run the following commands to configure the repository.
+- _Give the instructor access to your repository_.
+On your Bitbucket page (`https://bitbucket.org/username/repo`), click the blue **Send invitation** button at top right part of the page.
+Enter your instructor's Bitbucket username and click **Add**.
+Select the blue **Write** button (so your instructor can write feedback to your repository) and click **Share**.
+
+- (Optional) _Clone your repository_.
+If you want your repository on a different computer, clone your repository with the following commands.
 
 ```bash
+# Clone the folder from the online repository.
+$ cd ~/Desktop
+$ git clone https://username@bitbucket.org/username/repo.git foldername
+
+# Add your credentials to the new folder.
 $ cd volume1
-$ git config --local user.name "YOUR NAME"
-$ git config --local user.email "YOUR EMAIL ADDRESS"
+$ git config --local user.name "your name"
+$ git config --local user.email "your email"
 ```
 
 # Using Git
@@ -75,14 +88,14 @@ This repository must be manually synchronized with the online repository via two
 | `git reset -- <filename>`  | Remove a file from the staging area.           |
 | `git diff <filename>`      | See the changes made on an unstaged file since the last commit.|
 | `git diff --cached <filename>` | See the changes made on a staged file since the last commit.|
-| `git config --local user.name "your name"` | Tell git who you are |
-| `git config --local user.email youremail@gmail.com` | Tell git who you are |
+| `git config --local user.name "your name"` | Record your credentials |
+| `git config --local user.email youremail@gmail.com` | Record your credentials |
 
 ### Example Work Session
 
 Short version:
 ```bash
-$ cd Desktop/Volume1/
+$ cd Desktop/foldername/
 $ git pull origin master                           # Pull updates.
 
 # Make changes to a file.
@@ -95,11 +108,11 @@ $ git push origin master                           # Push updates.
 Long version:
 ```bash
 # Navigate to the clone of the repository.
-$ cd Desktop/Volume1/
+$ cd Desktop/foldername/
 
 # Pull any updates from the online repository (such as TA feedback).
 $ git pull origin master
-From https://bitbucket.org/byuacmeta/template
+From https://bitbucket.org/username/repo
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 
@@ -115,7 +128,7 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-$ git add PythonIntro/python_intro.py 
+$ git add PythonIntro/python_intro.py
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -137,7 +150,7 @@ Delta compression using up to 2 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 327 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://byuacmeta@bitbucket.org/byuacmeta/template.git
+To https://username@bitbucket.org/username/repo.git
    5742a1b..fed9b34  master -> master
 
 # The changes have been saved and the online repository updated.
