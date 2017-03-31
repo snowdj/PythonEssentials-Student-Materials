@@ -1,4 +1,4 @@
-# Files to IGNORE in Student Materials repositories.
+# Files to IGNORE in Student repositories.
 
 # Specific Files ==============================================================
 
@@ -8,7 +8,8 @@ __main__.py
 *.py[cdfo]
 .ipynb_checkpoints/
 
-# Data files.
+# Data files ------------------------------------------------------------------
+
 # PythonEssentials
 NumpyIntro/grid.npy
 MatplotlibIntro/FARS.npy
@@ -16,6 +17,7 @@ DataVisualization/MLB.npy
 DataVisualization/anscombe.npy
 DataVisualization/countries.npy
 DataVisualization/earthquakes.npy
+
 # Volume 1
 LinearTransformations/pi.npy
 LinearTransformations/horse.npy
@@ -24,11 +26,13 @@ LeastSquares_Eigenvalues/ellipse.npy
 LeastSquares_Eigenvalues/housing.npy
 ImageSegmentation/dream.png
 SVD_ImageCompression/hubble_image.jpg
-NumericalDifferentiation/cameraman.jpg
 PageRank/matrix.txt
 PageRank/ncaa2013.csv
+
 # Volume 2
+
 # Volume 3
+
 # Volume 4
 
 # General Files ===============================================================
