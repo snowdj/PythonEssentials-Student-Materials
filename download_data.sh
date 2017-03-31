@@ -4,7 +4,7 @@
 GIT="https://git-scm.com"
 GITLFS="https://git-lfs.github.com"
 TEMPDIR="__TEMP_DATA_DOWNLOAD__"
-PYTHONESSENTIALS="../$TEMPDIR/PythonEssentials"
+PYTHONESSENTIALS="$TEMPDIR/PythonEssentials"
 
 set +e
 
@@ -14,9 +14,7 @@ command -v git ||
 command -v git-lfs ||
 { echo -e "\nERROR: git-lfs is required. Download it at $GITLFS.\n"; exit 1; }
 
-# Make a temporary neighboring repository for the data download.
-START=`pwd`
-cd ../
+# Make a temporary repository for the data download.
 mkdir $TEMPDIR
 cd $TEMPDIR
 
@@ -27,9 +25,9 @@ git remote add -f origin https://github.com/Foundations-of-Applied-Mathematics/D
 git config core.sparseCheckout true
 echo "PythonEssentials" >> .git/info/sparse-checkout
 git pull origin master
+cd ../
 
-# Copy the files over from the temporary folder.
-cd $START
+# Migrate the files from the temporary folder.
 mv $PYTHONESSENTIALS/grid.npy NumpyIntro/
 mv $PYTHONESSENTIALS/FARS.npy MatplotlibIntro/
 mv $PYTHONESSENTIALS/MLB.npy DataVisualization/
@@ -37,7 +35,7 @@ mv $PYTHONESSENTIALS/anscombe.npy DataVisualization/
 mv $PYTHONESSENTIALS/countries.npy DataVisualization/
 mv $PYTHONESSENTIALS/earthquakes.npy DataVisualization/
 
-# Delete the temporary folder and return to the original folder.
-cd ../
+
+# Delete the temporary folder.
 rm -rf $TEMPDIR
-cd $START
+
