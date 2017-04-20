@@ -25,7 +25,8 @@ LeastSquares_Eigenvalues/circle.npy
 LeastSquares_Eigenvalues/ellipse.npy
 LeastSquares_Eigenvalues/housing.npy
 ImageSegmentation/dream.png
-SVD_ImageCompression/hubble_image.jpg
+SVD_ImageCompression/hubble.jpg
+SVD_ImageCompression/hubble_gray.jpg
 FacialRecognition/faces94.zip
 PageRank/matrix.txt
 PageRank/ncaa2013.csv
@@ -107,4 +108,3 @@ htmlcov/
 build/
 *.html
 *.mod
-
