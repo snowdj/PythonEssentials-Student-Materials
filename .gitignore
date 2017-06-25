@@ -13,23 +13,29 @@ __main__.py
 # PythonEssentials
 NumpyIntro/grid.npy
 MatplotlibIntro/FARS.npy
+ExceptionsFileIO/hello_world.txt
+ExceptionsFileIO/cf_example[12].txt
 DataVisualization/MLB.npy
 DataVisualization/anscombe.npy
 DataVisualization/countries.npy
 DataVisualization/earthquakes.npy
 
 # Volume 1
-LinearTransformations/pi.npy
 LinearTransformations/horse.npy
 LeastSquares_Eigenvalues/circle.npy
 LeastSquares_Eigenvalues/ellipse.npy
 LeastSquares_Eigenvalues/housing.npy
 ImageSegmentation/dream.png
+ImageSegmentation/dream_gray.png
+ImageSegmentation/monument.png
+ImageSegmentation/monument_gray.png
 SVD_ImageCompression/hubble.jpg
 SVD_ImageCompression/hubble_gray.jpg
 FacialRecognition/faces94.zip
+FacialRecognition/faces94/
 PageRank/matrix.txt
 PageRank/ncaa2013.csv
+DrazinInverse/social_network.csv
 
 # Volume 2
 

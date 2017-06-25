@@ -1,5 +1,5 @@
 # specs.py
-"""Python Essentials: Testing.
+"""Python Essentials: Unit Testing.
 <Name>
 <Class>
 <Date>
@@ -13,7 +13,7 @@ def divide(a, b):
     """Divide two numbers, raising an error if the second number is zero."""
     if b == 0:
         raise ZeroDivisionError("second input cannot be zero")
-    return a / float(b)
+    return a / b
 
 
 # Problem 1
@@ -56,7 +56,7 @@ def operate(a, b, oper):
     elif oper == '/':
         if b == 0:
             raise ZeroDivisionError("division by zero is undefined")
-        return a / float(b)
+        return a / b
     raise ValueError("oper must be one of '+', '/', '-', or '*'")
 
 
@@ -79,12 +79,12 @@ class Fraction(object):
 
     def __str__(self):
         if self.denom != 1:
-            return "{} / {}".format(self.numer, self.denom)
+            return "{}/{}".format(self.numer, self.denom)
         else:
             return str(self.numer)
 
     def __float__(self):
-        return self.numer / float(self.denom)
+        return self.numer / self.denom
 
     def __eq__(self, other):
         if type(other) is Fraction:
@@ -101,7 +101,7 @@ class Fraction(object):
     def __mul__(self, other):
         return Fraction(self.numer*other.numer, self.denom*other.denom)
 
-    def __div__(self, other):
+    def __truediv__(self, other):
         if self.denom*other.numer == 0:
             raise ZeroDivisionError("cannot divide by zero")
         return Fraction(self.numer*other.denom, self.denom*other.numer)

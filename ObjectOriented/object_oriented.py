@@ -5,7 +5,8 @@
 <Date>
 """
 
-class Backpack(object):
+
+class Backpack:
     """A Backpack object class. Has a name and a list of contents.
 
     Attributes:
@@ -15,13 +16,10 @@ class Backpack(object):
 
     # Problem 1: Modify __init__() and put(), and write dump().
     def __init__(self, name):
-        """Set the name and initialize an empty contents list.
+        """Set the name and initialize an empty list of contents.
 
-        Inputs:
+        Parameters:
             name (str): the name of the backpack's owner.
-
-        Returns:
-            A Backpack object wth no contents.
         """
         self.name = name
         self.contents = []
@@ -56,26 +54,20 @@ class Knapsack(Backpack):
     Attributes:
         name (str): the name of the knapsack's owner.
         color (str): the color of the knapsack.
-        max_size (int): the maximum number of items that can fit
-            in the knapsack.
+        max_size (int): the maximum number of items that can fit inside.
         contents (list): the contents of the backpack.
         closed (bool): whether or not the knapsack is tied shut.
     """
-    def __init__(self, name, color, max_size=3):
+    def __init__(self, name, color):
         """Use the Backpack constructor to initialize the name, color,
-        and max_size attributes. A knapsack only holds 3 item by default
-        instead of 5.
+        and max_size attributes. A knapsack only holds 3 item by default.
 
-        Inputs:
+        Parameters:
             name (str): the name of the knapsack's owner.
             color (str): the color of the knapsack.
-            max_size (int): the maximum number of items that can fit
-                in the knapsack. Defaults to 3.
-
-        Returns:
-            A Knapsack object with no contents.
+            max_size (int): the maximum number of items that can fit inside.
         """
-        Backpack.__init__(self, name, color, max_size)
+        Backpack.__init__(self, name, color, max_size=3)
         self.closed = True
 
     def put(self, item):
@@ -92,7 +84,14 @@ class Knapsack(Backpack):
         else:
             Backpack.take(self, item)
 
+    def weight(self):
+        """Calculate the weight of the knapsack by counting the length of the
+        string representations of each item in the contents list.
+        """
+        return sum([len(str(item)) for item in self.contents])
+
 
 # Problem 2: Write a 'Jetpack' class that inherits from the 'Backpack' class.
+
 
 # Problem 4: Write a 'ComplexNumber' class.

@@ -27,6 +27,9 @@ set +e
 echo -e "\nMigrating files ..."
 mv $PYTHONESSENTIALS/grid.npy NumpyIntro/
 mv $PYTHONESSENTIALS/FARS.npy MatplotlibIntro/
+mv $PYTHONESSENTIALS/hello_world.txt ExceptionsFileIO/
+mv $PYTHONESSENTIALS/cf_example1.txt ExceptionsFileIO/
+mv $PYTHONESSENTIALS/cf_example2.txt ExceptionsFileIO/
 mv $PYTHONESSENTIALS/MLB.npy DataVisualization/
 mv $PYTHONESSENTIALS/anscombe.npy DataVisualization/
 mv $PYTHONESSENTIALS/countries.npy DataVisualization/
@@ -35,4 +38,3 @@ mv $PYTHONESSENTIALS/earthquakes.npy DataVisualization/
 # Delete the temporary folder.
 rm -rf $TEMPDIR
 echo -e "\nDone.\n"
-

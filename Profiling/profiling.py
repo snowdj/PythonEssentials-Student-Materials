@@ -13,7 +13,7 @@ from scipy import linalg as la
 def compare_timings(f, g, *args):
     """Compare the timings of 'f' and 'g' with arguments '*args'.
 
-    Inputs:
+    Parameters:
         f (func): first function to compare.
         g (func): second function to compare.
         *args: arguments to use when callings functions 'f' and 'g',
@@ -48,24 +48,26 @@ def compare_LU(A):
     """Prints a comparison of LU and LU_opt with input of a square matrix A."""
     raise NotImplementedError("Problem 2 Incomplete")
 
+
 # Problem 3
 def mysum(x):
     """Return the sum of the elements of X without using a built-in function.
 
-    Inputs:
+    Parameters:
         x (iterable): a list, set, 1-d NumPy array, or another iterable.
     """
     raise NotImplementedError("Problem 3 Incomplete")
 
 def compare_sum(X):
     """
-    Inputs:
+    Parameters:
         x (iterable): a list, set, 1-d NumPy array, or another iterable.
 
     Prints a comparison of mysum and sum
     Prints a comparison of mysum and np.sum
     """
     raise NotImplementedError("Problem 3 Incomplete")
+
 
 # Problem 4
 def fibonacci(n):
@@ -98,7 +100,7 @@ def compare_foo(n):
 def pymatpow(X, power):
     """Return X^{power}, the matrix product XX...X, 'power' times.
 
-    Inputs:
+    Parameters:
         X ((n,n) ndarray): A square matrix.
         power (int): The power to which to raise X.
     """
@@ -118,7 +120,7 @@ def pymatpow(X, power):
 def numba_matpow(X, power):
     """ Return X^{power}.
 
-    Inputs:
+    Parameters:
         X (ndarray):  A square 2-D NumPy array
         power (int):  The power to which to raise X.
     Returns:
@@ -129,7 +131,7 @@ def numba_matpow(X, power):
 def numpy_matpow(X, power):
     """ Return X^{power}.
 
-    Inputs:
+    Parameters:
         X (ndarray):  A square 2-D NumPy array
         power (int):  The power to which to raise X.
     Returns:
@@ -139,7 +141,7 @@ def numpy_matpow(X, power):
 
 def compare_matpow(X, power):
     """
-    Inputs:
+    Parameters:
         X (ndarray):  A square 2-D NumPy array
         power (int):  The power to which to raise X.
 
@@ -153,7 +155,7 @@ def compare_matpow(X, power):
 def init_tridiag(n):
     """Construct a random nxn tridiagonal matrix A by diagonals.
 
-    Inputs:
+    Parameters:
         n (int): The number of rows / columns of A.
 
     Returns:
@@ -182,7 +184,7 @@ def init_tridiag(n):
 def pytridiag(a, b, c, d):
     """Solve the tridiagonal system Ax = d where A has diagonals a, b, and c.
 
-    Inputs:
+    Parameters:
         a ((n-1,) ndarray): first subdiagonal of A.
         b ((n,) ndarray): main diagonal of A.
         c ((n-1,) ndarray): first superdiagonal of A.
@@ -216,7 +218,7 @@ def pytridiag(a, b, c, d):
 def numba_tridiag(a, b, c, d):
     """Solve the tridiagonal system Ax = d where A has diagonals a, b, and c.
 
-    Inputs:
+    Parameters:
         a ((n-1,) ndarray): first subdiagonal of A.
         b ((n,) ndarray): main diagonal of A.
         c ((n-1,) ndarray): first superdiagonal of A.

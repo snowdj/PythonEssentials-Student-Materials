@@ -1,7 +1,8 @@
 # box.py
-"""Introductory Labs: The Standard Library. Auxiliary file (do not modify)."""
+"""Python Essentials: The Standard Library. Auxiliary file (do not modify)."""
 
 from itertools import combinations
+
 
 def isvalid(roll, remaining):
     """Check to see whether or not a roll is valid. That is, check if there
@@ -11,14 +12,14 @@ def isvalid(roll, remaining):
         roll (int): The value of a dice roll, between 2 and 12 (inclusive).
         remaining (list): The list of the numbers that still need to be
             removed before the box can be shut.
-    
+
     Returns:
         True if the roll is valid.
         False if the roll is invalid.
     """
-    if roll not in range(2, 13):
+    if roll not in range(1, 13):
         return False
-    for i in xrange(1, len(remaining)+1):
+    for i in range(1, len(remaining)+1):
         if any([sum(combo) == roll for combo in combinations(remaining, i)]):
             return True
     return False
@@ -33,7 +34,7 @@ def parse_input(player_input, remaining):
             The player's choices for which numbers to remove.
         remaining (list): The list of the numbers that still need to be
             removed before the box can be shut.
-    
+
     Returns:
         A list of the integers if the input was valid.
         An empty list if the input was invalid.
@@ -47,4 +48,3 @@ def parse_input(player_input, remaining):
         return choices
     except ValueError:
         return []
-

@@ -8,19 +8,19 @@
 
 def prob1():
     """Define the matrices A and B as arrays. Return the matrix product AB."""
-    pass
+    raise NotImplementedError("Problem 1 Incomplete")
 
 
 def prob2():
     """Define the matrix A as an array. Return the matrix -A^3 + 9A^2 - 15A."""
-    pass
+    raise NotImplementedError("Problem 2 Incomplete")
 
 
 def prob3():
     """Define the matrices A and B as arrays. Calculate the matrix product ABA,
     change its data type to np.int64, and return it.
     """
-    pass
+    raise NotImplementedError("Problem 3 Incomplete")
 
 
 def prob4(A):
@@ -32,7 +32,7 @@ def prob4(A):
         >>> prob4(A)
         array([0, 0, 3])
     """
-    pass
+    raise NotImplementedError("Problem 4 Incomplete")
 
 
 def prob5():
@@ -40,10 +40,10 @@ def prob5():
                                 | 0 A^T I |
                                 | A  0  0 |,
                                 | B  0  C |
-    where I is the identity matrix of appropriate size and each 0 is a matrix
-    of all zeros, also of appropriate sizes.
+    where I is the 3x3 identity matrix and each 0 is a matrix of all zeros
+    of the appropriate size.
     """
-    pass
+    raise NotImplementedError("Problem 5 Incomplete")
 
 
 def prob6(A):
@@ -56,7 +56,7 @@ def prob6(A):
                [ 0.        ,  1.        ,  0.        ],
                [ 0.33333333,  0.33333333,  0.33333333]])
     """
-    pass
+    raise NotImplementedError("Problem 6 Incomplete")
 
 
 def prob7():
@@ -64,4 +64,4 @@ def prob7():
     adjacent numbers in the same direction (up, down, left, right, or
     diagonally) in the grid.
     """
-    pass
+    raise NotImplementedError("Problem 7 Incomplete")

@@ -1,5 +1,5 @@
 # standard_library.py
-"""Python Essentials: The Standard Library
+"""Python Essentials: The Standard Library.
 <Name>
 <Class>
 <Date>
@@ -7,36 +7,47 @@
 
 
 # Problem 1
-def prob1(l):
-    """Accept a list 'l' of numbers as input and return a new list with the
-    minimum, maximum, and average of the contents of 'l'.
+def prob1(L):
+    """Return the minimum, maximum, and average of the entries of L
+    (in that order).
     """
-    pass
+    raise NotImplementedError("Problem 1 Incomplete")
 
 
 # Problem 2
 def prob2():
-    """Programmatically determine which Python objects are mutable and which
-    are immutable. Test numbers, strings, lists, tuples, and dictionaries.
-    Print your results to the terminal.
+    """Determine which Python objects are mutable and which are immutable.
+    Test numbers, strings, lists, tuples, and sets. Print your results.
     """
-    pass
+    raise NotImplementedError("Problem 2 Incomplete")
 
 
-# Problem 3: Create a 'calculator' module and implement this function.
-def prob3(a,b):
+# Problem 3
+def hypot(a, b):
     """Calculate and return the length of the hypotenuse of a right triangle.
-    Do not use any methods other than those that are imported from your
+    Do not use any functions other than those that are imported from your
     'calculator' module.
 
     Parameters:
-        a (float): the length one of the sides of the triangle.
-        b (float): the length the other nonhypotenuse side of the triangle.
-
+        a: the length one of the sides of the triangle.
+        b: the length the other non-hypotenuse side of the triangle.
     Returns:
         The length of the triangle's hypotenuse.
     """
-    pass
+    raise NotImplementedError("Problem 3 Incomplete")
 
 
-# Problem 4: Implement shut the box.
+# Problem 4
+def power_set(A):
+    """Use itertools to compute the power set of A.
+
+    Parameters:
+        A (iterable): a str, list, set, tuple, or other iterable collection.
+
+    Returns:
+        (list(sets)): The power set of A as a list of sets.
+    """
+    raise NotImplementedError("Problem 4 Incomplete")
+
+
+# Problem 5: Implement shut the box.

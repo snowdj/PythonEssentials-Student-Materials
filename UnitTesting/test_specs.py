@@ -1,5 +1,5 @@
 # test_specs.py
-"""Python Essentials: Testing.
+"""Python Essentials: Unit Testing.
 <Name>
 <Class>
 <Date>
@@ -28,10 +28,10 @@ def test_divide():
 # Problem 2: write a unit test for specs.month_length().
 
 
-# Problem 3: write a unit test for specs.operate(), then correct it.
+# Problem 3: write a unit test for specs.operate().
 
 
-# Problem 4: write unit tests for specs.Fraction.
+# Problem 4: write unit tests for specs.Fraction, then correct it.
 @pytest.fixture
 def set_up_fractions():
     frac_1_3 = specs.Fraction(1, 3)
@@ -50,9 +50,9 @@ def test_fraction_init(set_up_fractions):
 
 def test_fraction_str(set_up_fractions):
     frac_1_3, frac_1_2, frac_n2_3 = set_up_fractions
-    assert str(frac_1_3) == "1 / 3"
-    assert str(frac_1_2) == "1 / 2"
-    assert str(frac_n2_3) == "-2 / 3"
+    assert str(frac_1_3) == "1/3"
+    assert str(frac_1_2) == "1/2"
+    assert str(frac_n2_3) == "-2/3"
 
 def test_fraction_float(set_up_fractions):
     frac_1_3, frac_1_2, frac_n2_3 = set_up_fractions
