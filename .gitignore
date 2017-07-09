@@ -13,8 +13,8 @@ __main__.py
 # PythonEssentials
 NumpyIntro/grid.npy
 MatplotlibIntro/FARS.npy
-ExceptionsFileIO/hello_world.txt
-ExceptionsFileIO/cf_example[12].txt
+Exceptions_FileIO/hello_world.txt
+Exceptions_FileIO/cf_example[12].txt
 DataVisualization/MLB.npy
 DataVisualization/anscombe.npy
 DataVisualization/countries.npy
@@ -33,6 +33,8 @@ SVD_ImageCompression/hubble.jpg
 SVD_ImageCompression/hubble_gray.jpg
 FacialRecognition/faces94.zip
 FacialRecognition/faces94/
+Differentiation/plane.npy
+Conditioning_Stability/stability_data.npy
 PageRank/matrix.txt
 PageRank/ncaa2013.csv
 DrazinInverse/social_network.csv
