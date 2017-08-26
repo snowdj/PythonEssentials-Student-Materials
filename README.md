@@ -3,7 +3,7 @@ This repository contains specifications files for the Foundations of Applied Mat
 # Setup
 
 This website is a _git repository_, an online storage place for code and other small files.
-_Git_ is the underlying software that manages updates between this online repository and the copies of the repository stored locally on computers (_clones_).
+_Git_ is the underlying software that manages updates between this online repository and the copies of the repository, called _clones_, stored locally on computers.
 If git is not already installed on your computer, downloaded it at http://git-scm.com/downloads.
 If you have never used git, you might want to read a few of the following resources.
 - https://git-scm.com/docs/gittutorial
@@ -12,24 +12,26 @@ If you have never used git, you might want to read a few of the following resour
 - https://docs.gitlab.com/ce/gitlab-basics/start-using-git.html
 - https://www.codecademy.com/learn/learn-git
 
-Many different companies have websites for hosting online git repositories.
+There are many websites for hosting online git repositories.
 Your instructor will indicate which web service to use, but we only include instructions here for setup with Bitbucket.
 
-- _Sign up_. Create a Bitbucket account at https://bitbucket.org.
+1. _Sign up_. Create a Bitbucket account at https://bitbucket.org.
 If you use an academic email address (ending in .edu, ac.il, edu.sg, etc.), you will get free unlimited public and private repositories.
 
-- _Make a new repository_.
+2. _Make a new repository_.
 On the Bitbucket page, click the **Repositories** button from the menu at the top and select **Create repository**.
 Provide a name for the repository, mark the repository as **private**, and make sure the repository type is **Git**.
 Under **Advanced settings**, enter a short description for your repository, select **No forks** under forking, and select **Python** under language.
 Finally, click the blue **Create repository** button.
+Take note of the URL of the webpage that is created; it should be something like `https://bitbucket.org/username/repo`.
 
-- _Connect your folder to the new repository_.
+
+3. _Connect your folder to the new repository_.
 In a shell application (Terminal on Linux or Mac, or Git Bash on Windows), enter the following commands (here `username` is your Bitbucket username and `repo` is the name of your new repository).
 
 ```bash
 # Navigate to your folder.
-cd ~/Desktop/foldername
+$ cd ~/Desktop/foldername
 
 # Connect this folder with the online repository.
 $ git init
@@ -45,12 +47,12 @@ $ git commit -m "initial commit"
 $ git push origin master
 ```
 
-- _Give the instructor access to your repository_.
+4. _Give the instructor access to your repository_.
 On your Bitbucket page (`https://bitbucket.org/username/repo`), click the blue **Send invitation** button at top right part of the page.
 Enter your instructor's Bitbucket username and click **Add**.
 Select the blue **Write** button (so your instructor can write feedback to your repository) and click **Share**.
 
-- (Optional) _Clone your repository_.
+5. (Optional) _Clone your repository_.
 If you want your repository on a different computer, clone your repository with the following commands.
 
 ```bash
@@ -59,9 +61,20 @@ $ cd ~/Desktop
 $ git clone https://username@bitbucket.org/username/repo.git foldername
 
 # Add your credentials to the new folder.
-$ cd volume1
+$ cd foldername
 $ git config --local user.name "your name"
 $ git config --local user.email "your email"
+```
+
+6. _Download data files_.
+Many labs have accompanying data files.
+To download these files, navigate to your clone and run the `download_data.sh` bash script.
+This has to be done in each clone.
+
+```bash
+# Navigate to your folder and run the script.
+$ cd ~/Desktop/foldername
+$ bash download_data.sh
 ```
 
 # Using Git
