@@ -4,7 +4,7 @@ This repository contains specifications files for the Foundations of Applied Mat
 
 This website is a _git repository_, an online storage place for code and other small files.
 _Git_ is the underlying software that manages updates between this online repository and the copies of the repository, called _clones_, stored locally on computers.
-If git is not already installed on your computer, downloaded it at http://git-scm.com/downloads.
+If git is not already installed on your computer, download it at http://git-scm.com/downloads.
 If you have never used git, you might want to read a few of the following resources.
 - https://git-scm.com/docs/gittutorial
 - https://www.atlassian.com/git/tutorials
@@ -52,8 +52,18 @@ On your Bitbucket page (`https://bitbucket.org/username/repo`), click the blue *
 Enter your instructor's Bitbucket username and click **Add**.
 Select the blue **Write** button (so your instructor can write feedback to your repository) and click **Share**.
 
-5. (Optional) _Clone your repository_.
-If you want your repository on a different computer, clone your repository with the following commands.
+5. _Download data files_.
+Many labs have accompanying data files.
+To download these files, navigate to your clone and run the `download_data.sh` bash script, which downloads the files and places them in the correct lab folder for you.
+
+```bash
+# Navigate to your folder and run the script.
+$ cd ~/Desktop/foldername
+$ bash download_data.sh
+```
+
+6. (Optional) _Clone your repository_.
+If you want your repository on another computer after completing steps 1-4, use the following commands.
 
 ```bash
 # Clone the folder from the online repository.
@@ -65,17 +75,7 @@ $ cd foldername
 $ git config --local user.name "your name"
 $ git config --local user.email "your email"
 ```
-
-6. _Download data files_.
-Many labs have accompanying data files.
-To download these files, navigate to your clone and run the `download_data.sh` bash script.
-This has to be done in each clone.
-
-```bash
-# Navigate to your folder and run the script.
-$ cd ~/Desktop/foldername
-$ bash download_data.sh
-```
+Repeat step 5 in this clone as well.
 
 # Using Git
 
