@@ -5,7 +5,10 @@ SOURCE="https://github.com/Foundations-of-Applied-Mathematics/Data.git"
 GIT="https://git-scm.com"
 TEMPDIR="_DATA_"`date +%s`"_"
 PYTHONESSENTIALS="$TEMPDIR/PythonEssentials"
-
+VOLUME1="$TEMPDIR/Volume1"
+VOLUME2="$TEMPDIR/Volume2"
+VOLUME3="$TEMPDIR/Volume3"
+VOLUME4="$TEMPDIR/Volume4"
 
 # Check that git is installed.
 command -v git > /dev/null ||
@@ -25,15 +28,16 @@ cd ../
 # Migrate the files from the temporary folder.
 set +e
 echo -e "\nMigrating files ..."
-mv $PYTHONESSENTIALS/grid.npy NumpyIntro/
-mv $PYTHONESSENTIALS/FARS.npy MatplotlibIntro/
-mv $PYTHONESSENTIALS/hello_world.txt Exceptions_FileIO/
-mv $PYTHONESSENTIALS/cf_example1.txt Exceptions_FileIO/
-mv $PYTHONESSENTIALS/cf_example2.txt Exceptions_FileIO/
-mv $PYTHONESSENTIALS/MLB.npy DataVisualization/
-mv $PYTHONESSENTIALS/anscombe.npy DataVisualization/
-mv $PYTHONESSENTIALS/countries.npy DataVisualization/
-mv $PYTHONESSENTIALS/earthquakes.npy DataVisualization/
+
+cp $PYTHONESSENTIALS/grid.npy NumpyIntro/
+cp $PYTHONESSENTIALS/FARS.npy MatplotlibIntro/
+cp $PYTHONESSENTIALS/hello_world.txt Exceptions_FileIO/
+cp $PYTHONESSENTIALS/cf_example1.txt Exceptions_FileIO/
+cp $PYTHONESSENTIALS/cf_example2.txt Exceptions_FileIO/
+cp $PYTHONESSENTIALS/anscombe.npy DataVisualization/
+cp $PYTHONESSENTIALS/MLB.npy DataVisualization/
+cp $PYTHONESSENTIALS/earthquakes.npy DataVisualization/
+cp $PYTHONESSENTIALS/countries.npy DataVisualization/
 
 # Delete the temporary folder.
 rm -rf $TEMPDIR

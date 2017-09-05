@@ -1,51 +1,23 @@
-# Files to IGNORE in Student repositories.
 
-# Specific Files ==============================================================
+# Lab data files --------------------------------------------------------------
+
+grid.npy
+FARS.npy
+hello_world.txt
+cf_example1.txt
+cf_example2.txt
+anscombe.npy
+MLB.npy
+earthquakes.npy
+countries.npy
+
+# General Files ---------------------------------------------------------------
 
 # Extra Python files.
 __init__.py
 __main__.py
 *.py[cdfo]
 .ipynb_checkpoints/
-
-# Data files ------------------------------------------------------------------
-
-# PythonEssentials
-NumpyIntro/grid.npy
-MatplotlibIntro/FARS.npy
-Exceptions_FileIO/hello_world.txt
-Exceptions_FileIO/cf_example[12].txt
-DataVisualization/MLB.npy
-DataVisualization/anscombe.npy
-DataVisualization/countries.npy
-DataVisualization/earthquakes.npy
-
-# Volume 1
-LinearTransformations/horse.npy
-LeastSquares_Eigenvalues/circle.npy
-LeastSquares_Eigenvalues/ellipse.npy
-LeastSquares_Eigenvalues/housing.npy
-ImageSegmentation/dream.png
-ImageSegmentation/dream_gray.png
-ImageSegmentation/monument.png
-ImageSegmentation/monument_gray.png
-SVD_ImageCompression/hubble.jpg
-SVD_ImageCompression/hubble_gray.jpg
-FacialRecognition/faces94.zip
-FacialRecognition/faces94/
-Differentiation/plane.npy
-Conditioning_Stability/stability_data.npy
-PageRank/matrix.txt
-PageRank/ncaa2013.csv
-DrazinInverse/social_network.csv
-
-# Volume 2
-
-# Volume 3
-
-# Volume 4
-
-# General Files ===============================================================
 
 # Latex temporary files
 *.aux

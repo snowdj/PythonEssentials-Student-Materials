@@ -25,7 +25,6 @@ Under **Advanced settings**, enter a short description for your repository, sele
 Finally, click the blue **Create repository** button.
 Take note of the URL of the webpage that is created; it should be something like `https://bitbucket.org/username/repo`.
 
-
 3. _Connect your folder to the new repository_.
 In a shell application (Terminal on Linux or Mac, or Git Bash on Windows), enter the following commands (here `username` is your Bitbucket username and `repo` is the name of your new repository).
 
@@ -35,7 +34,7 @@ $ cd ~/Desktop/foldername
 
 # Connect this folder with the online repository.
 $ git init
-$ git add origin https://username@bitbucket.org/username/repo.git
+$ git remote add origin https://username@bitbucket.org/username/repo.git
 
 # Add your credentials to the folder.
 $ git config --local user.name "your name"
