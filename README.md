@@ -25,7 +25,12 @@ Under **Advanced settings**, enter a short description for your repository, sele
 Finally, click the blue **Create repository** button.
 Take note of the URL of the webpage that is created; it should be something like `https://bitbucket.org/username/repo`.
 
-3. _Connect your folder to the new repository_.
+3. _Give the instructor access to your repository_.
+On your Bitbucket page (`https://bitbucket.org/username/repo`), click the blue **Send invitation** button at top right part of the page.
+Enter your instructor's Bitbucket username and click **Add**.
+Select the blue **Write** button (so your instructor can write feedback to your repository) and click **Share**.
+
+4. _Connect your folder to the new repository_.
 In a shell application (Terminal on Linux or Mac, or Git Bash on Windows), enter the following commands (here `username` is your Bitbucket username and `repo` is the name of your new repository).
 
 ```bash
@@ -46,10 +51,10 @@ $ git commit -m "initial commit"
 $ git push origin master
 ```
 
-4. _Give the instructor access to your repository_.
-On your Bitbucket page (`https://bitbucket.org/username/repo`), click the blue **Send invitation** button at top right part of the page.
-Enter your instructor's Bitbucket username and click **Add**.
-Select the blue **Write** button (so your instructor can write feedback to your repository) and click **Share**.
+If you enter the repository URL incorrectly, you can reset it with the following line.
+```bash
+$ git remote set-url origin https://username@bitbucket.org/username/repo.git
+```
 
 5. _Download data files_.
 Many labs have accompanying data files.
